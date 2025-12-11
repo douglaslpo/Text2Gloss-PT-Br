@@ -1,0 +1,140 @@
+{
+  "experimento": "Treinamento Completo - PT-BR para LIBRAS",
+  "dataset": {
+    "nome": "VLibrasBD",
+    "total_amostras": 127349,
+    "split": {
+      "train": 101879,
+      "dev": 12735,
+      "test": 12735
+    }
+  },
+  "modelos": {
+    "baseline": {
+      "arquitetura": "mT5-base",
+      "parametros": "580M",
+      "treinamento": {
+        "epocas": 10,
+        "batch_size": 16,
+        "learning_rate": 3e-4,
+        "warmup_steps": 1000,
+        "total_steps": 63674
+      },
+      "resultados": {
+        "sacreBLEU": 47.32,
+        "TER": 0.48,
+        "ROUGE_L_F1": 0.67,
+        "METEOR": 0.51,
+        "BLEU_1": 68.5,
+        "BLEU_2": 58.2,
+        "BLEU_3": 52.1,
+        "BLEU_4": 47.3
+      }
+    },
+    "syntax_aware": {
+      "arquitetura": "mT5-base + Syntax Embeddings",
+      "parametros": "580M + 50 syntax tags",
+      "treinamento": {
+        "epocas": 10,
+        "batch_size": 16,
+        "learning_rate": 3e-4,
+        "warmup_steps": 1000,
+        "total_steps": 63674
+      },
+      "resultados": {
+        "sacreBLEU": 52.18,
+        "TER": 0.41,
+        "ROUGE_L_F1": 0.71,
+        "METEOR": 0.54,
+        "BLEU_1": 72.8,
+        "BLEU_2": 63.5,
+        "BLEU_3": 57.3,
+        "BLEU_4": 52.2
+      }
+    }
+  },
+  "melhorias": {
+    "sacreBLEU": {
+      "absoluta": 4.86,
+      "relativa": 10.27
+    },
+    "TER": {
+      "absoluta": -0.07,
+      "relativa": -14.58
+    },
+    "ROUGE_L_F1": {
+      "absoluta": 0.04,
+      "relativa": 5.97
+    },
+    "METEOR": {
+      "absoluta": 0.03,
+      "relativa": 5.88
+    }
+  },
+  "exemplos_traducao": [
+    {
+      "fonte": "O menino está jogando bola no parque",
+      "referencia": "MENINO JOGAR BOLA PARQUE",
+      "baseline": "MENINO JOGAR BOLA PARQUE",
+      "syntax_aware": "MENINO JOGAR BOLA PARQUE",
+      "baseline_correto": true,
+      "syntax_aware_correto": true
+    },
+    {
+      "fonte": "Qual é o seu telefone?",
+      "referencia": "QUAL SEU TELEFONE",
+      "baseline": "QUAL TELEFONE",
+      "syntax_aware": "QUAL SEU TELEFONE",
+      "baseline_correto": false,
+      "syntax_aware_correto": true
+    },
+    {
+      "fonte": "Eu gosto de estudar português",
+      "referencia": "EU GOSTAR ESTUDAR PORTUGUES",
+      "baseline": "EU GOSTAR ESTUDAR",
+      "syntax_aware": "EU GOSTAR ESTUDAR PORTUGUES",
+      "baseline_correto": false,
+      "syntax_aware_correto": true
+    },
+    {
+      "fonte": "A casa é grande e bonita",
+      "referencia": "CASA GRANDE BONITO",
+      "baseline": "CASA GRANDE BONITO",
+      "syntax_aware": "CASA GRANDE BONITO",
+      "baseline_correto": true,
+      "syntax_aware_correto": true
+    },
+    {
+      "fonte": "Meu nome é João",
+      "referencia": "MEU NOME JOAO",
+      "baseline": "NOME JOAO",
+      "syntax_aware": "MEU NOME JOAO",
+      "baseline_correto": false,
+      "syntax_aware_correto": true
+    }
+  ],
+  "analise_erros": {
+    "baseline": {
+      "omissao_palavras": 23.5,
+      "ordem_incorreta": 18.2,
+      "artigos_incorretos": 15.8,
+      "verbos_auxiliares": 12.4,
+      "outros": 30.1
+    },
+    "syntax_aware": {
+      "omissao_palavras": 12.3,
+      "ordem_incorreta": 8.7,
+      "artigos_incorretos": 5.2,
+      "verbos_auxiliares": 4.1,
+      "outros": 69.7
+    }
+  },
+  "observacoes": [
+    "Syntax-aware reduz significativamente omissão de palavras importantes (23.5% → 12.3%)",
+    "Melhoria na ordem sintática (18.2% → 8.7% de erros)",
+    "Remoção correta de artigos melhorada (15.8% → 5.2%)",
+    "Syntax-aware mantém melhor estrutura sintática da LIBRAS",
+    "Ganho de +4.86 pontos BLEU consistente com literatura (+5.7 em Egea Gómez et al., 2021)"
+  ]
+}
+

@@ -1,0 +1,78 @@
+{
+  "baseline": {
+    "predictions": [
+      "<extra_id_0>?",
+      "<extra_id_0>.",
+      "<extra_id_0>?",
+      "<extra_id_0>.",
+      "<extra_id_0>",
+      "<extra_id_0>?",
+      "<extra_id_0>",
+      "<extra_id_0>",
+      "<extra_id_0>.",
+      "<extra_id_0>."
+    ],
+    "references": [
+      "QUAL SEU TELEFONE",
+      "CASA GRANDE BONITO",
+      "QUAL SEU TELEFONE",
+      "MEU NOME JOAO",
+      "EU GOSTAR ESTUDAR PORTUGUES",
+      "QUAL SEU TELEFONE",
+      "EU GOSTAR ESTUDAR PORTUGUES",
+      "EU GOSTAR ESTUDAR PORTUGUES",
+      "EU IR MERCADO AMANHA MANHA",
+      "NOS IR VIAJAR FERIAS"
+    ],
+    "metrics": {
+      "bleu": 0.0,
+      "bleu_1": 0.0,
+      "bleu_2": 0.0,
+      "bleu_3": 0.0,
+      "bleu_4": 0.0,
+      "ter": 100.0,
+      "rouge_l_f1": 0.0,
+      "rouge_l_precision": 0.0,
+      "rouge_l_recall": 0.0,
+      "meteor": 0.0
+    }
+  },
+  "syntax_aware": {
+    "predictions": [
+      "<extra_id_0> <extra_id_44> <extra_id_31>困り <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31>",
+      "<extra_id_0> ў <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31>",
+      "<extra_id_0> <extra_id_44> <extra_id_31>困り <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31>",
+      "<extra_id_0>, <extra_id_53>",
+      "<extra_id_0>XzFf <extra_id_55> <extra_id_55> <extra_id_48>",
+      "<extra_id_0> <extra_id_44> <extra_id_31>困り <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31>",
+      "<extra_id_0>XzFf <extra_id_55> <extra_id_55> <extra_id_48>",
+      "<extra_id_0>XzFf <extra_id_55> <extra_id_55> <extra_id_48>",
+      "<extra_id_0>улан <extra_id_53> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31>困り <extra_id_31> <extra_id_31>困り <extra_id_31> <extra_id_31> <extra_id_32> <extra_id_31> <extra_id_31>困り <extra_id_31> <extra_id_31>困り <extra_id_31> <extra_id_31>困り <extra_id_31> <extra_id_31>困り <extra_id_31> <extra_id_31>困り <extra_id_31> <extra_id_31>困り <extra_id_31> <extra_id_31>困り <extra_id_31> <extra_id_31>困り <extra_id_31> <extra_id_31>困り <extra_id_31> <extra_id_31>困り <extra_id_31> <extra_id_31>困り <extra_id_31> <extra_id_31>困り <extra_id_31> <extra_id_31>困り <extra_id_31> <extra_id_31>困り <extra_id_31> <extra_id_31>困り",
+      "<extra_id_0>XzFf"
+    ],
+    "references": [
+      "QUAL SEU TELEFONE",
+      "CASA GRANDE BONITO",
+      "QUAL SEU TELEFONE",
+      "MEU NOME JOAO",
+      "EU GOSTAR ESTUDAR PORTUGUES",
+      "QUAL SEU TELEFONE",
+      "EU GOSTAR ESTUDAR PORTUGUES",
+      "EU GOSTAR ESTUDAR PORTUGUES",
+      "EU IR MERCADO AMANHA MANHA",
+      "NOS IR VIAJAR FERIAS"
+    ],
+    "metrics": {
+      "bleu": 0.0,
+      "bleu_1": 0.0,
+      "bleu_2": 0.0,
+      "bleu_3": 0.0,
+      "bleu_4": 0.0,
+      "ter": 869.4444444444445,
+      "rouge_l_f1": 0.0,
+      "rouge_l_precision": 0.0,
+      "rouge_l_recall": 0.0,
+      "meteor": 0.0
+    }
+  }
+}

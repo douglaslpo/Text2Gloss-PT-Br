@@ -1,0 +1,99 @@
+# Training Configuration for PT-BR to LIBRAS Translation
+
+# Training phases
+training:
+  # Phase 1: Multilingual pre-training (optional)
+  phase1_multilingual:
+    enabled: false  # Set to true to enable multilingual pre-training
+    datasets: ["asl", "dgs"]
+    epochs: 10
+    
+  # Phase 2: LIBRAS fine-tuning (main training)
+  phase2_libras:
+    enabled: true
+    epochs: 2
+    early_stopping_patience: 10
+    
+  # Phase 3: Domain adaptation (optional)
+  phase3_domain:
+    enabled: false
+    domain: "government"  # Options: government, education, general
+    epochs: 20
+
+# Optimization
+optimizer:
+  type: "adamw"
+  learning_rate: 5.0e-5
+  weight_decay: 0.01
+  betas: [0.9, 0.999]
+  eps: 1.0e-8
+  
+# Learning rate scheduler
+scheduler:
+  type: "linear"  # Options: linear, cosine, polynomial
+  warmup_steps: 100
+  warmup_ratio: 0.1
+  
+# Batch configuration
+batch:
+  train_batch_size: 2
+  eval_batch_size: 2
+  gradient_accumulation_steps: 16  # Effective batch size = 32
+  max_grad_norm: 1.0
+  
+# Mixed precision training
+mixed_precision:
+  enabled: false
+  dtype: "fp16"  # Options: fp16, bf16
+  
+# Distributed training
+distributed:
+  enabled: false
+  backend: "nccl"
+  num_gpus: 1
+  
+# Checkpointing
+checkpointing:
+  save_strategy: "steps"  # Options: steps, epoch
+  save_steps: 100
+  save_total_limit: 2
+  load_best_model_at_end: true
+  metric_for_best_model: "eval_bleu"
+  greater_is_better: true
+  
+# Evaluation
+evaluation:
+  strategy: "steps"  # Options: steps, epoch
+  eval_steps: 100
+  eval_accumulation_steps: 1
+  
+# Logging
+logging:
+  strategy: "steps"
+  steps: 10
+  report_to: []
+  wandb:
+    project: "libras-text2gloss"
+    entity: null  # Set your wandb username
+    name: null  # Auto-generated if null
+    tags: ["mt5", "libras", "syntax-aware"]
+    
+# Data loading
+dataloader:
+  num_workers: 4
+  pin_memory: true
+  prefetch_factor: 2
+  
+# Reproducibility
+seed: 42
+deterministic: true
+
+# Resume training
+resume:
+  from_checkpoint: null  # Path to checkpoint to resume from
+  
+# Debugging
+debug:
+  enabled: true
+  max_train_samples: 200
+  max_eval_samples: 50

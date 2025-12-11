@@ -1,0 +1,106 @@
+{
+  "test_cases": [
+    {
+      "pt_br": "O menino está jogando bola no parque",
+      "expected": "MENINO JOGAR BOLA PARQUE",
+      "category": "ação"
+    },
+    {
+      "pt_br": "Qual é o seu telefone?",
+      "expected": "QUAL SEU TELEFONE",
+      "category": "pergunta"
+    },
+    {
+      "pt_br": "Eu gosto de estudar português",
+      "expected": "EU GOSTAR ESTUDAR PORTUGUES",
+      "category": "preferência"
+    },
+    {
+      "pt_br": "A casa é grande e bonita",
+      "expected": "CASA GRANDE BONITO",
+      "category": "descrição"
+    },
+    {
+      "pt_br": "Meu nome é João",
+      "expected": "MEU NOME JOAO",
+      "category": "identificação"
+    },
+    {
+      "pt_br": "Hoje faz muito calor",
+      "expected": "HOJE MUITO CALOR",
+      "category": "clima"
+    },
+    {
+      "pt_br": "O professor ensina matemática",
+      "expected": "PROFESSOR ENSINAR MATEMATICA",
+      "category": "educação"
+    },
+    {
+      "pt_br": "Eu preciso ir ao médico",
+      "expected": "EU PRECISAR IR MEDICO",
+      "category": "saúde"
+    },
+    {
+      "pt_br": "A biblioteca fica na rua principal",
+      "expected": "BIBLIOTECA FICAR RUA PRINCIPAL",
+      "category": "localização"
+    },
+    {
+      "pt_br": "Ela comprou um livro interessante",
+      "expected": "ELA COMPRAR LIVRO INTERESSANTE",
+      "category": "ação passada"
+    }
+  ],
+  "baseline": {
+    "predictions": [
+      "<extra_id_0>",
+      "<extra_id_0>?",
+      "<extra_id_0>",
+      "<extra_id_0>.",
+      "<extra_id_0>.",
+      "<extra_id_0>",
+      "<extra_id_0>",
+      "<extra_id_0>?",
+      "<extra_id_0>.",
+      "<extra_id_0>"
+    ],
+    "metrics": {
+      "bleu": 0.0,
+      "bleu_1": 0.0,
+      "bleu_2": 0.0,
+      "bleu_3": 0.0,
+      "bleu_4": 0.0,
+      "ter": 100.0,
+      "rouge_l_f1": 0.0,
+      "rouge_l_precision": 0.0,
+      "rouge_l_recall": 0.0,
+      "meteor": 0.0
+    }
+  },
+  "syntax_aware": {
+    "predictions": [
+      "<extra_id_0>...",
+      "<extra_id_0>..",
+      "<extra_id_0>",
+      "<extra_id_0>",
+      "<extra_id_0>",
+      "<extra_id_0>...",
+      "<extra_id_0> asla  <extra_id_1> asla  <extra_id_2> asla  <extra_id_1> asla na asla merita asla na asla na asla na asla na asla na asla merita asla na asla merita asla merita asla merita. <extra_id_15> asla [...] asla na",
+      "<extra_id_0>..",
+      "<extra_id_0>ㄔ <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31> <extra_id_31>",
+      "<extra_id_0>."
+    ],
+    "metrics": {
+      "bleu": 0.0,
+      "bleu_1": 0.0,
+      "bleu_2": 0.0,
+      "bleu_3": 0.0,
+      "bleu_4": 0.0,
+      "ter": 360.0,
+      "rouge_l_f1": 0.0,
+      "rouge_l_precision": 0.0,
+      "rouge_l_recall": 0.0,
+      "meteor": 0.0
+    }
+  }
+}

@@ -1,0 +1,141 @@
+# Data Configuration for PT-BR to LIBRAS Translation
+
+# Dataset paths
+datasets:
+  libras:
+    name: "VLibrasBD"
+    path: "data/raw/vlibrasbd.csv"
+    format: "csv"
+    columns:
+      source: "portuguese"
+      target: "libras_gloss"
+    size: 127349
+    
+  libras_alt:
+    name: "libras_bilingual_dataset"
+    path: "data/raw/libras_bilingual.csv"
+    format: "csv"
+    columns:
+      source: "pt_br"
+      target: "libras"
+    size: 68029
+    
+  # Multilingual datasets for transfer learning
+  dgs:
+    name: "RWTH-PHOENIX-2014-T"
+    path: "data/raw/phoenix2014t/"
+    format: "txt"
+    source_file: "spoken_train.txt"
+    target_file: "glosses_train.txt"
+    language: "de"
+    size: 7096
+    
+  asl:
+    name: "ASL-Dataset"
+    path: "data/raw/asl/"
+    format: "json"
+    enabled: false  # Set to true if ASL data available
+
+# Data splits
+splits:
+  train: 0.8
+  dev: 0.1
+  test: 0.1
+  shuffle: true
+  stratify: false
+  
+# Preprocessing
+preprocessing:
+  # Text normalization
+  lowercase: false  # Keep original casing for Portuguese
+  remove_punctuation: false  # Keep punctuation for syntax parsing
+  normalize_numbers: false
+  
+  # Cleaning
+  min_length: 3  # Minimum tokens
+  max_length: 64  # Maximum tokens (Reduced for CPU stability)
+  remove_duplicates: true
+  remove_empty: true
+  
+  # Special handling
+  handle_urls: "remove"  # Options: remove, replace, keep
+  handle_emails: "remove"
+  handle_mentions: "remove"
+  
+# Syntax processing (Portuguese)
+syntax:
+  enabled: true
+  spacy_model: "pt_core_news_lg"
+  batch_size: 1000
+  
+  # Dependency tags to extract
+  tags:
+    - "ROOT"
+    - "nsubj"    # nominal subject
+    - "obj"      # object
+    - "iobj"     # indirect object
+    - "det"      # determiner
+    - "amod"     # adjectival modifier
+    - "advmod"   # adverbial modifier
+    - "aux"      # auxiliary
+    - "case"     # case marking
+    - "cc"       # coordinating conjunction
+    - "conj"     # conjunct
+    - "mark"     # marker
+    - "nmod"     # nominal modifier
+    - "nummod"   # numeric modifier
+    - "obl"      # oblique nominal
+    - "punct"    # punctuation
+    - "acl"      # clausal modifier
+    - "advcl"    # adverbial clause modifier
+    - "ccomp"    # clausal complement
+    - "xcomp"    # open clausal complement
+    - "appos"    # appositional modifier
+    - "compound" # compound
+    - "fixed"    # fixed multiword expression
+    - "flat"     # flat multiword expression
+    - "PAD"      # padding token
+    - "OTHER"    # other/unknown
+    
+# Data augmentation
+augmentation:
+  enabled: true
+  
+  # Techniques
+  synonym_replacement:
+    enabled: true
+    probability: 0.1
+    num_replacements: 2
+    
+  random_deletion:
+    enabled: true
+    probability: 0.05
+    
+  random_swap:
+    enabled: true
+    probability: 0.05
+    num_swaps: 1
+    
+  back_translation:
+    enabled: false  # Requires additional MT model
+    source_lang: "pt"
+    pivot_lang: "en"
+    
+# Caching
+cache:
+  enabled: true
+  cache_dir: "data/cache/"
+  overwrite: false
+  
+# Output paths
+output:
+  processed_dir: "data/processed/"
+  train_file: "train.json"
+  dev_file: "dev.json"
+  test_file: "test.json"
+  vocab_file: "vocab.json"
+  syntax_mapping_file: "syntax_mapping.json"
+  
+# Statistics
+compute_statistics: true
+statistics_output: "data/processed/statistics.json"
